@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS - Loja</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body>
+    <div id="app">
+        <nav
+            class="navbar sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-4 z-50 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="logo text-2xl font-bold text-blue-500">🛒 Loja</div>
+
+                <div class="nav-controls flex items-center gap-4">
+                    <button id="themeToggle"
+                        class="theme-toggle text-xl p-1 rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-2 focus:outline-blue-500"
+                        aria-label="Alternar tema">
+                        🌙
+                    </button>
+
+                    <div class="cart-badge bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold"
+                        aria-label="3 itens no carrinho">
+                        3
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content max-w-7xl mx-auto px-4 py-8">
+            <div id="productsGrid" class="products-grid grid grid-cols-1 gap-6">
+                <!-- Produtos serão inseridos via JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>

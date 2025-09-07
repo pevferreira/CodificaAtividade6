@@ -1,0 +1,72 @@
+.skeletonCard {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  overflow: hidden;
+}
+
+.skeletonImage {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: var(--spacing-md);
+  animation: skeleton-loading 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary) 25%,
+    var(--color-border) 50%,
+    var(--color-secondary) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--border-radius);
+}
+
+.skeletonText {
+  height: 1rem;
+  margin-bottom: var(--spacing-sm);
+  animation: skeleton-loading 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary) 25%,
+    var(--color-border) 50%,
+    var(--color-secondary) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--border-radius);
+}
+
+.skeletonText.short {
+  width: 60%;
+}
+
+.skeletonButton {
+  height: 2.5rem;
+  margin-top: var(--spacing-md);
+  animation: skeleton-loading 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary) 25%,
+    var(--color-border) 50%,
+    var(--color-secondary) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--border-radius);
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonImage,
+  .skeletonText,
+  .skeletonButton {
+    animation: none;
+    background: var(--color-secondary);
+  }
+}

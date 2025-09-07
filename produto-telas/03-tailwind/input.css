@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  [data-theme="light"] {
+    --color-bg: theme('colors.background.light');
+    --color-text: theme('colors.text.light');
+    --color-primary: theme('colors.primary.light');
+  }
+  
+  [data-theme="dark"] {
+    --color-bg: theme('colors.background.dark');
+    --color-text: theme('colors.text.dark');
+    --color-primary: theme('colors.primary.dark');
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 border-2 rounded-md font-semibold transition-all duration-200 ease-in-out gap-2 min-w-[120px] min-h-[40px] text-sm;
+  }
+
+  .btn:focus {
+    @apply outline-2 outline-offset-2 outline-blue-500; /* CORRIGIDO */
+  }
+
+  .btn:disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+
+  .btn-solid {
+    @apply bg-blue-500 border-blue-500 text-white; /* CORRIGIDO */
+  }
+
+  .btn-solid:hover:not(:disabled) {
+    @apply bg-transparent text-blue-500; /* CORRIGIDO */
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-blue-500 text-blue-500; /* CORRIGIDO */
+  }
+
+  .btn-outline:hover:not(:disabled) {
+    @apply bg-blue-500 text-white; /* CORRIGIDO */
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border-transparent text-blue-500; /* CORRIGIDO */
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    @apply bg-gray-200 dark:bg-gray-600;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+}
